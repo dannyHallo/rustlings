@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 // Say we're writing a game where you can buy items with tokens. All items cost
 // 5 tokens, and whenever you purchase items there is a processing fee of 1
 // token. A player of the game will type in how many items they want to buy, and
@@ -14,15 +16,21 @@
 // There are at least two ways to implement this that are both correct. But one
 // is a lot shorter!
 
-use std::num::ParseIntError;
+use std::num::{IntErrorKind, ParseIntError};
 
 fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
 
     // TODO: Handle the error case as described above.
-    let qty = item_quantity.parse::<i32>();
+    // let qty = item_quantity.parse::<i32>();
 
+    // match qty {
+    //     Ok(q) => Ok(q * cost_per_item + processing_fee),
+    //     Err(e) => Err(e)
+    // }
+    
+    let qty = item_quantity.parse::<i32>()?;
     Ok(qty * cost_per_item + processing_fee)
 }
 
