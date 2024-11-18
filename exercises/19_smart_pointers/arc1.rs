@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 // In this exercise, we are given a `Vec` of `u32` called `numbers` with values
 // ranging from 0 to 99. We would like to use this set of numbers within 8
 // different threads simultaneously. Each thread is going to get the sum of
