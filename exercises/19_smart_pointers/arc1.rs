@@ -21,6 +21,16 @@
 #![forbid(unused_imports)]
 use std::{sync::Arc, thread};
 
+trait Sum {
+    fn sum(&self) -> u32;
+}
+
+impl Sum for u32 {
+    fn sum(&self) -> u32 {
+        *self
+    }
+}
+
 fn main() {
     let numbers: Vec<_> = (0..100u32).collect();
 
